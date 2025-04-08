@@ -35,14 +35,16 @@ LongInt::LongInt(const LongInt& num1, const LongInt& num2) {
 	}
 	if(numb1){
 		while(numb1){
-			m_ll.push_tail(numb1->element);
+			m_ll.push_tail(numb1->element + remainder);
 			numb1 = numb1->next;
+			remainder = 0;
 		}
 	 }
 	if(numb2){
 		while(numb2){
-			m_ll.push_tail(numb2->element);
+			m_ll.push_tail(numb2->element + remainder);
 			numb2 = numb2->next;
+			remainder = 0;
 		}
 	}
 };
