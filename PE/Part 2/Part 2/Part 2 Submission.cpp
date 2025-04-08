@@ -19,35 +19,30 @@ void List::push_tail(int element) {
 
 
 LongInt::LongInt(const LongInt& num1, const LongInt& num2) {
-	std::string result = "";
 	Node* numb1 = num1.m_ll.m_head;
 	Node* numb2 = num2.m_ll.m_head;
 	int remainder = 0;
-	int i = 0;
 
-	/*while (numb1 && numb2) {
+	while (numb1 && numb2) {
 		int number1 = numb1->element;
 		int number2 = numb2->element;
-		int sum = number1 + number2;
+		int sum = number1 + number2 + remainder;
 		remainder = sum / 10;
 		int value = sum % 10;
-		result[i] = value + '0';
-		i++;
+		m_ll.push_tail(value);
 		numb1 = numb1->next;
 		numb2 = numb2->next;
-	}*/
-	//if(numb1){
-	//	while(numb1){
-	//		result[i] = num1->element;
-	//	}
-	// }
-	//if(numb2){
-	//	while(numb2){
-	//		result[i] = numb2->element;
-	//	}
-	// }
-	//cout << result[i - 1] << endl;
-	// modify this function
-	return;
-
+	}
+	if(numb1){
+		while(numb1){
+			m_ll.push_tail(numb1->element);
+			numb1 = numb1->next;
+		}
+	 }
+	if(numb2){
+		while(numb2){
+			m_ll.push_tail(numb2->element);
+			numb2 = numb2->next;
+		}
+	}
 };
